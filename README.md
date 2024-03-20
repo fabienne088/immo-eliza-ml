@@ -22,9 +22,8 @@ In the Immo-Eliza-ML project we will build a performant machine learning model t
 │   ├── 4. SimpleLinReg.ipynb
 │   ├── 5. MultipleLinReg.ipynb
 │   ├── 6. RandomForestReg.ipynb
-    ├── 6. functions.ipynb
+│   ├── 7. functions.ipynb
 │   └── 8. functions_cleaned.ipynb
-
 │
 ├── in_progress\
 │   ├── 1. train.ipynb
@@ -33,6 +32,9 @@ In the Immo-Eliza-ML project we will build a performant machine learning model t
 ├── models\
 │   ├── MultipleLinReg.ipynb
 │   └── RandomForestReg.ipynb
+│
+├── src\
+│   └── .jpg
 │
 ├── .gitignore
 ├── MODELSCARD.md
@@ -43,7 +45,7 @@ In the Immo-Eliza-ML project we will build a performant machine learning model t
 
 ## 🏁 Getting Started
 
-### Prerequisities
+### 📚 Prerequisities
 
 To run the project, you need to install the required libraries. 
 
@@ -100,4 +102,4 @@ To use this repository, follow these steps:
 This project took form in six days.
 
 ## 📌 Personal Situation
-This project was made during the AI Bootcamp at BeCode.
+This project was made as part of the AI Bootcamp at BeCode.
