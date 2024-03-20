@@ -10,8 +10,35 @@ In the Immo-Eliza-ML project we will build a performant machine learning model t
 
 
 ## 📦 Repo structure
+```md
+├── data\
+│   ├── cleaned_properties.csv
+│   └── properties.csv
+│
+├── drafts\
+│   ├── 1. cleaning.ipynb
+│   ├── 2. preprocessing.ipynb
+│   ├── 3. model_training_test.ipynb
+│   ├── 4. SimpleLinReg.ipynb
+│   ├── 5. MultipleLinReg.ipynb
+│   ├── 6. RandomForestReg.ipynb
+│   └── 7. functions.ipynb
+│
+├── in_progress\
+│   ├── 1. train.ipynb
+│   └── 2. predict.ipynb
+│
+├── models\
+│   ├── MultipleLinReg.ipynb
+│   ├── RandomForestReg.ipynb
+│   └── functions.ipynb
+│
+├── .gitignore
+├── MODELSCARD.md
+├── README.md
+└── requirements.txt
 
-
+```
 
 ## 🏁 Getting Started
 
