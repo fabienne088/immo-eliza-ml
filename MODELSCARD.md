@@ -16,7 +16,7 @@ A dataset is provided in [proporties](data\properties.csv). Some notes:
 - All missing categories for the categorical variables are encoded as `MISSING` 
 
 ### Target variable
-The target variable is 'price'
+The target variable is 'price'.
 
 ### Features
 Following featueres were used:
@@ -38,6 +38,7 @@ Multiple Linear Regression and Random Forest Regression were finally chosen.
 Performance metrics for the various models tested, visualizations, ...
 
 - **Linear Regression**
+
 Training score: 7.86 %
 
 - **Multiple Linear Regression**
