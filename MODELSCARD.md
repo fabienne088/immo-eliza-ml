@@ -7,7 +7,7 @@ In the Immo-Eliza-ML project we will build a performant machine learning model t
 ## Data
 
 ### The dataset
-A dataset is provided in [proporties](data\properties.csv). Some notes:
+A dataset is provided in `data/properties.csv`. Some notes:
 - There are about 76 000 properties, roughly equally spread across houses and apartments
 - Each property has a unique identifier `id`
 - The target variable is `price`
