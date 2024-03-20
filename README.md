@@ -22,7 +22,9 @@ In the Immo-Eliza-ML project we will build a performant machine learning model t
 │   ├── 4. SimpleLinReg.ipynb
 │   ├── 5. MultipleLinReg.ipynb
 │   ├── 6. RandomForestReg.ipynb
-│   └── 7. functions.ipynb
+    ├── 6. functions.ipynb
+│   └── 8. functions_cleaned.ipynb
+
 │
 ├── in_progress\
 │   ├── 1. train.ipynb
@@ -30,8 +32,7 @@ In the Immo-Eliza-ML project we will build a performant machine learning model t
 │
 ├── models\
 │   ├── MultipleLinReg.ipynb
-│   ├── RandomForestReg.ipynb
-│   └── functions.ipynb
+│   └── RandomForestReg.ipynb
 │
 ├── .gitignore
 ├── MODELSCARD.md
