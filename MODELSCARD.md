@@ -71,4 +71,4 @@ What are the dependencies, what scripts are there to train the model, how to gen
 ## Maintainers
 
 In case of questions or issues you can contact the developer on LinkedIn.<br />
-[www.linkedin.com/in/fabienne-thüer](https://www.linkedin.com/in/fabienne-th%C3%BCer-56a8a0a?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BeETk08eKRMStMfq9JmDuYA%3D%3D)
+[www.linkedin.com/in/fabienne-thüer](www.linkedin.com/in/fabienne-thüer-56a8a0a)
