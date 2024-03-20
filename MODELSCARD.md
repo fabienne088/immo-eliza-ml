@@ -19,7 +19,8 @@ A dataset is provided in [proporties](data\properties.csv). Some notes:
 The target variable is 'price'
 
 ### Features
-Following featueres were tested:
+Following featueres were used:
+
 ['region', 'province', 'total_area_sqm', 'surface_land_sqm', 'nbr_frontages', 'nbr_bedrooms', 'equipped_kitchen', 'fl_furnished', 'fl_open_fire', 'fl_terrace', 'terrace_sqm', 'fl_garden', 'garden_sqm', 'fl_swimming_pool', 'fl_floodzone', 'state_building', 'primary_energy_consumption_sqm', 'epc', 'heating_type', 'fl_double_glazing']
 
 
@@ -30,12 +31,20 @@ Following models were tested:
 - Multiple Linear Regression
 - Random Forest Regression
 
-
-final model chosen, ...
+Multiple Linear Regression and Random Forest Regression were finally chosen.
 
 ## Performance
 
 Performance metrics for the various models tested, visualizations, ...
+
+- **Linear Regression**
+Training score: 7.86 %
+
+- **Multiple Linear Regression**
+
+- **Random Forest Regression**
+
+
 
 ## Limitations
 
