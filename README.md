@@ -6,7 +6,7 @@
 ## 🧐 Description
 In the Immo-Eliza-ML project we will build a performant machine learning model to predict prices of real estate proporties in Belgium. This involves cleaning the dataset, preprocessing, model training, model evaluation and iteration.
 
-![house_logo](src\—Pngtree—home house real estate property_5181201.png)
+![house_logo](src\Pngtree—home house real estate property_5181201.png "house_logo")
 
 
 ## 📦 Repo structure
