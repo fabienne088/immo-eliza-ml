@@ -48,7 +48,7 @@ To run the project, you need to install the required libraries.
 
 You can click on the badge links to learn more about each library and its specific version used in this project. You can install them manually using pip install <library name> or just running pip install -r requirements.txt.
 
-. Install the required libraries:
+Install the required libraries:
 
    - [![python version](https://img.shields.io/badge/python-3.x-blue)](https://python.org)
    - [![Pandas Version](https://img.shields.io/badge/pandas-2.x-green)](https://pandas.pydata.org/)
@@ -90,7 +90,7 @@ To use this repository, follow these steps:
     - The `drafts` directory contains Jupyter notebooks (`*.ipynb`) where you can see step by step cleaning, splitting and preprocessing of the data. Inluding try-outs of model training and evalution. Open these notebooks in Jupyter Notebook or JupyterLab to view the analyses and results.
 
 4. **Access models**:
-    - The `models` directory contains a Linear Regression  and a Random Forest Regression model. Including training and evaluation.
+    - The `models` directory contains a LinearRegression  and a RandomForestRegression model. Including training and evaluation.
 
 5. **Work with Data**:
     - The `data` directory contains the dataset used for preprocessing. You can find both raw and clean versions of the dataset. Explore the data files to understand their structure and contents.
