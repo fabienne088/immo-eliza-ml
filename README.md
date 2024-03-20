@@ -3,7 +3,7 @@
 
 [![forthebadge made-with-python](https://ForTheBadge.com/images/badges/made-with-python.svg)](https://www.python.org/)
 
-## Description
+## 🧐 Description
 In the Immo-Eliza-ML project we will build a performant machine learning model to predict prices of real estate proporties in Belgium. This involves cleaning the dataset, preprocessing, model training, model evaluation and iteration.
 
 ![Alt text](src/House_analysis_2.png)
@@ -11,35 +11,15 @@ In the Immo-Eliza-ML project we will build a performant machine learning model t
 
 ## 📦 Repo structure
 
-Notebooks\
-   ├── 1. cleaning.ipynb
-   ├── 2. preprocessing.ipynb
-   ├── 3. model_training_test.ipynb
-   ├── 4. SimpleLinReg.ipynb
-   ├── 5. MultipleLinReg.ipynb
-   ├── 6. RandomForestReg.ipynb
-   └── 7. functions.ipynb
-
-Scripts\
-   ├── 1. train.ipynb
-   ├── 2. predict.ipynb
-   ├── MultipleLinReg.ipynb
-   ├── RandomForestReg.ipynb
-   └── functions.ipynb
-
-data\
-   ├── cleaned_properties.csv
-   └── properties.csv
-
-.gitignore
-MODELSCARD.md
-README.md
-requirements.txt
 
 
-## ⚙️ Installation
+## 🏁 Getting Started
 
-To run the project, you need to install the required libraries. You can click on the badge links to learn more about each library and its specific version used in this project. You can install them manually using pip install <library name> or just running pip install -r requirements.txt.
+### Prerequisities
+
+To run the project, you need to install the required libraries. 
+
+You can click on the badge links to learn more about each library and its specific version used in this project. You can install them manually using pip install <library name> or just running pip install -r requirements.txt.
 
 . Install the required libraries:
 
@@ -50,50 +30,43 @@ To run the project, you need to install the required libraries. You can click on
    - [![Seaborn Version](https://img.shields.io/badge/seaborn-0.x-yellow)](https://seaborn.pydata.org/)
    - [![sklearn Version](https://img.shields.io/badge/sklearn-0.x-grey)](https://scikit-learn.org/stable/)
 
-   ## The dataset
-It includes about 39000 properties scrapped from ImmoWeb: [Immoweb](https://www.immoweb.be) 
-
-To run the program you'll need the requirements.txt containing the required libraries.
+### ⚙️ Installation
 
 1. Clone the repository:
     ```bash
-    git clone https://github.com/mahsanazar/immo-eliza-DAMI-analysis.git
+    git clone https://github.com/fabienne088/immo-eliza-ml.git
     ```
 
 2. Navigate to the project directory:
     ```bash
-    cd immo-eliza-DAMI-analysis
+    cd IMMO-ELIZA-ML
     ```
 
-3. You're all set! You can now explore the analysis notebooks in the `analysis` and `reports` directories and work with the data in the `data` directory. Enjoy!
+3. You're all set! You can now explore the  notebooks in the `drafts` and `models` directories and work with the data in the `data` directory. Enjoy!
 
-## 🛎️ Usage
+## 🎈 Usage
 To use this repository, follow these steps:
 
 1. **Clone the Repository**: 
     - Clone the repository to your local machine using the following command:
     ```bash
-    git clone https://github.com/mahsanazar/immo-eliza-DAMI-analysis.git
+    git clone https://github.com/fabienne088/immo-eliza-ml.git
     ```
 
 2. **Navigate to the Project Directory**:
     - Once cloned, navigate to the project directory:
     ```bash
-    cd immo-eliza-DAMI-analysis
+    cd IMMO-ELIZA-ML
     ```
 
-3. **Explore Analysis Notebooks**:
-    - The `analysis` directory contains Jupyter notebooks (`*.ipynb`) where you can explore various analyses performed on the data. Open these notebooks in Jupyter Notebook or JupyterLab to view the analyses and results.
+3. **Explore drafts Notebooks**:
+    - The `drafts` directory contains Jupyter notebooks (`*.ipynb`) where you can see step by step cleaning, splitting and preprocessing of the data. Inluding try-outs of model training and evalution. Open these notebooks in Jupyter Notebook or JupyterLab to view the analyses and results.
 
-4. **Access Reports**:
-    - The `reports` directory includes reports generated from the analysis. These reports may contain visualizations, insights, and conclusions drawn from the data analysis.
+4. **Access models**:
+    - The `models` directory contains a Linear Regression  and a Random Forest Regression model. Including training and evaluation.
 
 5. **Work with Data**:
-    - The `data` directory contains the dataset used for analysis. You can find both raw and clean versions of the dataset. Explore the data files to understand their structure and contents.
-
-## 📑 Sources
-- [Immoweb](https://www.immoweb.be/en) - Real estate website from which data is scraped.
-
+    - The `data` directory contains the dataset used for preprocessing. You can find both raw and clean versions of the dataset. Explore the data files to understand their structure and contents.
 
 ## ⏱️ Timeline
 This project took form in six days.
