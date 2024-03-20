@@ -1,44 +1,40 @@
 # IMMO-ELIZA-ML
-Preprocess the data and finally build a performant machine learning model.
+
 
 [![forthebadge made-with-python](https://ForTheBadge.com/images/badges/made-with-python.svg)](https://www.python.org/)
 
 ## Description
-This notebook shows the analysis of the houses and apartments in the top 30 cities in
-
-The Immo Eliza Data Analysis project focuses on analyzing a dataset of properties including houses and apartments for sale from the website Immoweb. It involves cleaning the dataset, performing exploratory data analysis, and creating visualizations to gain insights into the properties and their characteristics.
-
-
+In the Immo-Eliza-ML project we will build a performant machine learning model to predict prices of real estate proporties in Belgium. This involves cleaning the dataset, preprocessing, model training, model evaluation and iteration.
 
 ![Alt text](src/House_analysis_2.png)
 
 
 ## 📦 Repo structure
-   │
-├── Notebooks\
-│   ├── 1. cleaning.ipynb
-│   ├── 2. preprocessing.ipynb
-│   ├── 3. model_training_test.ipynb
-│   ├── 4. SimpleLinReg.ipynb
-│   ├── 5. MultipleLinReg.ipynb
-│   ├── 6. RandomForestReg.ipynb
-│   └── 7. functions.ipynb
-│
-├── Scripts\
-│   ├── 1. train.ipynb
-│   ├── 2. predict.ipynb
-│   ├── MultipleLinReg.ipynb
-│   ├── RandomForestReg.ipynb
-│   └── functions.ipynb
-│
-├── data\
-│   ├── cleaned_properties.csv
-│   └── properties.csv
-│
-├── .gitignore
-├── MODELSCARD.md
-├── README.md
-└── requirements.txt
+
+Notebooks\
+   ├── 1. cleaning.ipynb
+   ├── 2. preprocessing.ipynb
+   ├── 3. model_training_test.ipynb
+   ├── 4. SimpleLinReg.ipynb
+   ├── 5. MultipleLinReg.ipynb
+   ├── 6. RandomForestReg.ipynb
+   └── 7. functions.ipynb
+
+Scripts\
+   ├── 1. train.ipynb
+   ├── 2. predict.ipynb
+   ├── MultipleLinReg.ipynb
+   ├── RandomForestReg.ipynb
+   └── functions.ipynb
+
+data\
+   ├── cleaned_properties.csv
+   └── properties.csv
+
+.gitignore
+MODELSCARD.md
+README.md
+requirements.txt
 
 
 ## ⚙️ Installation
