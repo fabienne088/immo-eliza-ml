@@ -60,13 +60,18 @@ Training score: 7.86 %
 | MSE            | 14620510605.64 | 89505049990.32 |
 | RMSE           | 120915.30      | 299173.95      |
 
+Visualisations of the performance will be added soon.
+
 ## Limitations
 
-What are the limitations of your model?
+The limitations of my model still need to be explored. Feature names of new data will interfere if they are named differently than in the test dataset.
 
 ## Usage
 
-What are the dependencies, what scripts are there to train the model, how to generate predictions, ...
+The results depends on which feature in the future will be more important than it is now.
+
+To train the model there are for now notebooks, scripts are in progress.
+A script to generate predictions is also in progress.
 
 ## Maintainers
 
