@@ -10,6 +10,7 @@ In the Immo-Eliza-ML project we will build a performant machine learning model t
 ![house_loge](<src/Pngtree—home house real estate property_5181201.png>)
 
 
+
 ## 📦 Repo structure
 
 ```md
