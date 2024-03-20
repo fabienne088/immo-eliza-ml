@@ -90,13 +90,13 @@ To use this repository, follow these steps:
     ```
 
 3. **Explore drafts Notebooks**:
-    - The `drafts` directory contains Jupyter notebooks (`*.ipynb`) where you can see step by step cleaning, splitting and preprocessing of the data. Inluding try-outs of model training and evalution. Open these notebooks in Jupyter Notebook or JupyterLab to view the analyses and results.
+    - The `drafts` directory contains Jupyter notebooks (`*.ipynb`) where you can see step by step cleaning, splitting and preprocessing of the data. Inluding try-outs of model training and evalution. Open these notebooks in Jupyter Notebook or JupyterLab to view the regression analyses, model trainings and results.
 
 4. **Access models**:
-    - The `models` directory contains a LinearRegression  and a RandomForestRegression model. Including training and evaluation.
+    - The `models` directory contains a LinearRegression  and a RandomForestRegression model. Including training, prediction and evaluation.
 
 5. **Work with Data**:
-    - The `data` directory contains the dataset used for preprocessing. You can find both raw and clean versions of the dataset. Explore the data files to understand their structure and contents.
+    - The `data` directory contains the dataset used for preprocessing. You can find both original and clean versions of the dataset. Explore the data files to understand their structure and contents.
 
 ## ⏱️ Timeline
 This project took form in six days.
