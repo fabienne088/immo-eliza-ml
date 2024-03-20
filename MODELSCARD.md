@@ -37,15 +37,31 @@ Multiple Linear Regression and Random Forest Regression were finally chosen.
 
 Performance metrics for the various models tested, visualizations, ...
 
-- **Linear Regression**
+### **Linear Regression**
 
 Training score: 7.86 %
 
-- **Multiple Linear Regression**
+### **Multiple Linear Regression**
+Linear Regression Model Evaluation:
 
-- **Random Forest Regression**
+| Metric         | Training       | Testing        |
+|----------------|----------------|----------------|
+| Score          | 32.57%         | 41.22%         |
+| MAE            | 171200.16      | 167932.81      |
+| MSE            | 166009171623.71| 150780709179.69|
+| RMSE           | 407442.23      | 388304.92      |
 
 
+### **Random Forest Regression**
+
+Random Forest Regressor Model Evaluation:
+
+| Metric         | Training       | Testing        |
+|----------------|----------------|----------------|
+| Score          | 94.06%         | 65.11%         |
+| MAE            | 42857.23       | 113583.66      |
+| MSE            | 14620510605.64 | 89505049990.32 |
+| RMSE           | 120915.30      | 299173.95      |
 
 ## Limitations
 
