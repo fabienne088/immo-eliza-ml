@@ -7,10 +7,9 @@ from sklearn.compose import ColumnTransformer
 from sklearn.preprocessing import StandardScaler, OneHotEncoder
 from sklearn.impute import SimpleImputer
 from sklearn.pipeline import Pipeline
-
-from sklearn.linear_model import LinearRegression
-import matplotlib.pyplot as plt
-import seaborn as sns
+from sklearn.ensemble import RandomForestRegressor
+import pickle
+from sklearn.metrics import mean_absolute_error, mean_squared_error, r2_score, root_mean_squared_error
 
 def explore_df(df):
     """ This function reads a CSV file, displays basic information about 
@@ -48,6 +47,7 @@ df = pd.read_csv(r"data\cleaned_properties.csv")
 # Call the function to explore the data
 explore_df(df)
 
+
 def filter_houses(df):
     """Filter out the DataFrame for values where the property_type is 'HOUSE'
     and the subproperty_type is not 'APARTMENT_BLOCK'.
@@ -66,6 +66,7 @@ def filter_houses(df):
 
 # Call the filter_houses function and pass your DataFrame as an argument
 df_house = filter_houses(df)
+
 
 def prepare_data(df_house):
     """Prepare the data for machine learning by splitting it into features (X) and target variable (y),
@@ -145,3 +146,87 @@ def preprocess_data(X_train, X_test):
 
 #  Call preprocess_data
 X_train_processed, X_test_processed = preprocess_data(X_train, X_test)
+
+# Save X_train_processed to a file
+with open('X_train_processed.pkl', 'wb') as file:
+    pickle.dump(X_train_processed, file)
+
+# Save X_test_processed to a file
+with open('X_test_processed.pkl', 'wb') as file:
+    pickle.dump(X_test_processed, file)
+
+def train_model(X_train_processed, y_train, n_estimators=10, random_state=42):
+    """Initialize and train a Random Forest Regressor model.
+
+    Parameters:
+        X_train_processed (DataFrame): Preprocessed features for training.
+        y_train (Series): Target variable for training.
+        n_estimators (int, optional): Number of trees in the forest. Defaults to 10.
+        random_state (int, optional): Seed used by the random number generator. Defaults to 42.
+
+    Returns:
+        RandomForestRegressor: Trained Random Forest Regressor model.
+    """    
+    # Initialize the RFR model
+    regressor = RandomForestRegressor(n_estimators=n_estimators, random_state=random_state)
+    # Train the model using the processed X_train and y_train
+    regressor.fit(X_train_processed, y_train)
+
+    return regressor
+
+# Call train_model
+regressor = train_model(X_train_processed, y_train)
+
+# Save the model to a file
+with open('random_forest_regressor.pkl', 'wb') as file:
+    pickle.dump(regressor, file)
+
+def evaluate_model(regressor, X_train_processed, y_train, X_test_processed, y_test):
+    """Predicts target variable, evaluates the regression model, and 
+    prints evaluation metrics.
+
+    Parameters:
+        regressor (RandomForestRegressor): Trained RandomForestRegressor model.
+        X_train_processed (DataFrame): Preprocessed features for training.
+        y_train (Series): Target variable for training.
+        X_test_processed (DataFrame): Preprocessed features for testing.
+        y_test (Series): Target variable for testing.
+
+    Returns:
+        Dataframe: DataFrame containing actual and predicted values for the test set.
+    """    
+    # Predictions
+    y_train_pred = regressor.predict(X_train_processed)
+    y_test_pred = regressor.predict(X_test_processed)
+
+    # Evaluation
+    train_r2 = r2_score(y_train, y_train_pred)
+    test_r2 = r2_score(y_test, y_test_pred)
+    
+    train_mae = mean_absolute_error(y_train, y_train_pred)
+    test_mae = mean_absolute_error(y_test, y_test_pred)
+
+    train_mse = mean_squared_error(y_train, y_train_pred)
+    test_mse = mean_squared_error(y_test, y_test_pred)
+
+    train_rmse = root_mean_squared_error(y_train, y_train_pred)
+    test_rmse = root_mean_squared_error(y_test, y_test_pred)
+
+    #Actual value and the predicted value
+    reg_model_diff = pd.DataFrame({'Actual value': y_test, 'Predicted value': y_test_pred})
+    print(reg_model_diff)
+
+    print("Random Forest Regressor Model Evaluation:")
+    print("Training score: {:.2f} %".format(train_r2*100))
+    print("Testing score: {:.2f} %".format(test_r2*100))
+    print("Training MAE:", round(train_mae,2))
+    print("Testing MAE:", round(test_mae,2))
+    print("Training MSE:", round(train_mse,2))
+    print("Testing MSE:", round(test_mse,2))
+    print("Training RMSE:", round(train_rmse,2))
+    print("Testing RMSE:", round(test_rmse,2))
+
+    return reg_model_diff
+
+# Call evaluate_model
+reg_model_diff = evaluate_model(regressor, X_train_processed, y_train, X_test_processed, y_test)
