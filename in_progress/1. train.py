@@ -147,13 +147,10 @@ def preprocess_data(X_train, X_test):
 #  Call preprocess_data
 X_train_processed, X_test_processed = preprocess_data(X_train, X_test)
 
-# Save X_train_processed to a file
-with open('X_train_processed.pkl', 'wb') as file:
-    pickle.dump(X_train_processed, file)
+# Save the object to a file
+with open('preprocess.pkl', 'wb') as file:
+    pickle.dump(preprocess_data, file)
 
-# Save X_test_processed to a file
-with open('X_test_processed.pkl', 'wb') as file:
-    pickle.dump(X_test_processed, file)
 
 def train_model(X_train_processed, y_train, n_estimators=10, random_state=42):
     """Initialize and train a Random Forest Regressor model.

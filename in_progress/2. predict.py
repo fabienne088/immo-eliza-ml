@@ -4,6 +4,10 @@
 
 import pickle
 
+# Load the object from the file
+with open('preprocess.pkl', 'rb') as file:
+    loaded_preprocess = pickle.load(file)
+
 # Load the model from the file
 with open('random_forest_regressor.pkl', 'rb') as file:
     loaded_regressor = pickle.load(file)
