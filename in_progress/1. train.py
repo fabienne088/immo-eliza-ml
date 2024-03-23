@@ -98,15 +98,20 @@ def prepare_data(df_house):
 X_train, X_test, y_train, y_test = prepare_data(df_house)
 
 
-def preprocess_data(X_train, X_test):
-    """Preprocesses training and test data including imputation, encoding, and scaling.
+from sklearn.pipeline import Pipeline
+from sklearn.impute import SimpleImputer
+from sklearn.preprocessing import StandardScaler, OneHotEncoder
+from sklearn.compose import ColumnTransformer
+import pandas as pd
 
-    Parameters:
-        X_train (DataFrame): Input training DataFrame.
-        X_test (DataFrame): Input test DataFrame.
+def preprocess_data(X_train):
+    """Preprocesses training data including imputation, encoding, and scaling.
+
+    Args:
+        X_train (pandas DataFrame): Input training DataFrame.
 
     Returns:
-        tuple of pandas DataFrames: Preprocessed training and test DataFrames.
+        pandas DataFrame: Preprocessed training DataFrame.
     """    
     # Separate numerical and categorical columns
     numeric_cols = X_train.select_dtypes(include=['int64', 'float64']).columns
@@ -132,24 +137,52 @@ def preprocess_data(X_train, X_test):
 
     # Fit and transform the preprocessing steps on training data
     X_train_processed = preprocessor.fit_transform(X_train)
-    X_test_processed = preprocessor.transform(X_test)
 
     # Convert the processed data into DataFrames
     X_train_processed = pd.DataFrame(X_train_processed, columns=numeric_cols.tolist() +
                                      preprocessor.named_transformers_['cat']
                                      .named_steps['onehot'].get_feature_names_out(categorical_cols).tolist())
-    X_test_processed = pd.DataFrame(X_test_processed, columns=numeric_cols.tolist() +
-                                    preprocessor.named_transformers_['cat']
-                                    .named_steps['onehot'].get_feature_names_out(categorical_cols).tolist())
+    
+    return X_train_processed, preprocessor
 
-    return X_train_processed, X_test_processed
+def preprocess_data_for_test(X_test, preprocessor):
+    """Preprocesses test data including imputation, encoding, and scaling.
 
-#  Call preprocess_data
-X_train_processed, X_test_processed = preprocess_data(X_train, X_test)
+    Args:
+        X_test (pandas DataFrame): Input test DataFrame.
+        preprocessor (sklearn ColumnTransformer): Fitted preprocessor used to transform the test data.
 
-# Save the object to a file
-with open('preprocess.pkl', 'wb') as file:
-    pickle.dump(preprocess_data, file)
+    Returns:
+        pandas DataFrame: Preprocessed test DataFrame.
+    """
+    # Transform the test data using the fitted preprocessor
+    X_test_processed = preprocessor.transform(X_test)
+
+    # Get the column names for the transformed data
+    numeric_cols = X_test.select_dtypes(include=['int64', 'float64']).columns
+    categorical_cols = X_test.select_dtypes(include=['object']).columns
+
+    transformed_columns = numeric_cols.tolist() + \
+                          preprocessor.named_transformers_['cat'].named_steps['onehot'] \
+                          .get_feature_names_out(categorical_cols).tolist()
+
+    # Convert the processed data into a DataFrame
+    X_test_processed = pd.DataFrame(X_test_processed, columns=transformed_columns)
+
+    return X_test_processed
+
+# Preprocess training data and obtain the preprocessor object
+X_train_processed, preprocessor = preprocess_data(X_train)
+# Save the preprocessor to a file
+with open('preprocessor.pkl', 'wb') as file:
+    pickle.dump(preprocessor, file)
+
+# Preprocess test data using the preprocessor object
+X_test_processed = preprocess_data_for_test(X_test, preprocessor)
+# Save the preprocess_data_for_test to a file
+with open('preprocessing.pkl', 'wb') as file:
+    pickle.dump(preprocess_data_for_test, file)
+
 
 
 def train_model(X_train_processed, y_train, n_estimators=10, random_state=42):
