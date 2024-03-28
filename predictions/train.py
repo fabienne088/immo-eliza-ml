@@ -212,6 +212,7 @@ regressor = train_model(X_train_processed, y_train)
 # Save the model to a file
 with gzip.open('random_forest_regressor.pkl', 'wb') as f:
     pickle.dump(regressor, f)
+    
 
 def evaluate_model(regressor, X_train_processed, y_train, X_test_processed, y_test):
     """Predicts target variable, evaluates the regression model, and 
